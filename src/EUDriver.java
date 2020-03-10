@@ -35,8 +35,7 @@ public class EUDriver {
     }
 
     /**
-     * Main Menu - Method to display the menu
-     * @return
+     * @return Scanner input aquired from the user.
      */
     private int mainMenu() {
 
@@ -73,6 +72,10 @@ public class EUDriver {
 
     }
 
+    /**
+     * Runs menu commands.
+     * Calls save/load method for party list.
+     */
     private void runMenu() {
         int option = mainMenu();
         while (option != 0) {
@@ -302,8 +305,12 @@ public class EUDriver {
         }
     }
 
-
-public String listMEPSOfCountry(){
+    /**
+     * Preforms validity on indexes.
+     * Prints the list of elements in a array.
+     * @return object with the list of MEP's
+     */
+    public String listMEPSOfCountry(){
        System.out.println(listCountries());
        if (euCountries.size() > 0) {
            int index = ScannerInput.readNextInt("Enter the index of the Country to list MEPs ==> ");
@@ -313,11 +320,9 @@ public String listMEPSOfCountry(){
            } else return "No country at this index";
        }
         else return "No countries";
-
-
-
-        //The method should ask the user to enter the country. The String that is returned is printed to the console.
 }
+
+
     public void addParty(){
         System.out.print("Enter the party name: ");
         String partyName = input.nextLine();
